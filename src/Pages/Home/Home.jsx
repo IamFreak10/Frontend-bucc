@@ -1,11 +1,12 @@
-import Carousel from './Carousel/ AutoCinematicCarousel'
-import React from 'react'
+import Carousel from './Carousel/ AutoCinematicCarousel';
+import React from 'react';
+import Welcome from './Welcome/Welcome';
 
 export default function Home() {
   return (
     <>
-    <Carousel/>
-    
+      <Carousel />
+      <Welcome />
     </>
-  )
+  );
 }
