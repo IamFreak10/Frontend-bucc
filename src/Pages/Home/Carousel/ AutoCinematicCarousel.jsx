@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const images = ['/one.jpg', '/two.jpg', '/three.jpg', '/four.jpg', '/five.jpg'];
+const images = ['/one.webp', '/two.webp', '/three.webp', '/four.webp', '/five.webp'];
 
 // Gaming & High-Tech Reveal Variants
 const gamingStyles = [
