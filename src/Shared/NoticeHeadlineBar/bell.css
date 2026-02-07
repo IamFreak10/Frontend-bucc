@@ -1,0 +1,31 @@
+@keyframes bell-ring {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-15deg); }
+  30% { transform: rotate(10deg); }
+  40% { transform: rotate(-10deg); }
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes bell-glow {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+.bell-ring {
+  animation: bell-ring 1.2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.bell-glow {
+  border-radius: 50%;
+  animation: bell-glow 1.2s ease-in-out infinite;
+}
