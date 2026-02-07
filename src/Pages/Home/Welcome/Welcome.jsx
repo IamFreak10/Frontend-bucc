@@ -8,7 +8,7 @@ export default function Welcome() {
         {/* soft background glow */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-green-50 via-white to-white" />
 
-        <div className="max-w-4xl mx-auto ">
+        <div className="max-w-7xl mx-auto ">
           {/* small badge */}
           <span className="inline-block mb-4 px-4 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
             Barishal University Career Club
