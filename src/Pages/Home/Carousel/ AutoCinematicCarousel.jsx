@@ -93,7 +93,7 @@ export default function AutoCinematicCarousel() {
           initial={{ opacity: 0, y: 20, filter: 'brightness(2)' }}
           animate={{ opacity: 1, y: 0, filter: 'brightness(1)' }}
           transition={{ duration: 0.8, type: "spring" }}
-          src="../../../../public/BUCC Logo_20260111_171506_0000.png" 
+          src="/BUCC Logo_20260111_171506_0000.png" 
           className="w-20 h-20 md:w-28 md:h-28 mb-6 drop-shadow-[0_0_30px_rgba(161,188,152,0.6)]"
         />
 
