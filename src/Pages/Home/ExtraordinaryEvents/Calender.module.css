@@ -1,0 +1,201 @@
+.container {
+  max-width: 1100px;
+  margin: 60px auto 20px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 2rem;
+  color: #004d26;
+}
+
+.eventCard {
+  display: flex;
+  flex-direction: row; /* Default: Desktop & Tablet */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.bannerSide {
+  width: 45%; /* Desktop/Tablet e image ektu chhoto rakhlam */
+  position: relative;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendarSide {
+  width: 55%; /* Calendar ke ektu beshi jayga dilam md device er jonno */
+  background: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.bannerImg {
+  width: 100%;
+  height: 300px; /* Tablet e height fixed thakbe */
+  object-fit: cover;
+}
+
+/* --- MD Device (Tablet) Specific Fixes --- */
+@media (max-width: 1024px) {
+  .bannerImg {
+    height: 250px;
+  }
+  .calendarWrapper :global(.react-calendar__tile) {
+    font-size: 0.8rem; /* Tablet e font ektu chhoto */
+    padding: 10px 0 !important;
+  }
+}
+
+/* --- Mobile Device (Phone) Fixes --- */
+@media (max-width: 768px) {
+  .eventCard {
+    flex-direction: column; /* Moble e column stack */
+  }
+
+  .bannerSide, .calendarSide {
+    width: 100%;
+  }
+
+  .bannerImg {
+    height: 200px;
+  }
+
+  /* Mobile e tile gulo ke square rakhte hobe */
+  .calendarWrapper :global(.react-calendar__tile) {
+    aspect-ratio: 1; 
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Calendar Core Styles --- */
+.calendarWrapper {
+  padding: 10px;
+  background: #fff;
+  flex-grow: 1;
+}
+
+.calendarWrapper :global(.react-calendar__month-view__days) {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+
+.calendarWrapper :global(.react-calendar__tile) {
+  aspect-ratio: 1.2;
+  border: 1px solid #f0f0f0 !important;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.highlightedTile {
+  background-color: #004d26 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.hoverInfo {
+  padding: 20px;
+  text-align: left;
+  background: white;
+  border-top: 4px solid #fbbf24;
+  min-height: 100px;
+}
+
+.footer {
+  background: #e5e7eb;
+  padding: 10px 15px;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+}
+/* Calendar.module.css */
+
+.tileBase {
+  position: relative; /* Jate hover layer tile er vitore thake */
+  overflow: visible !important;
+}
+
+.invisibleHoverLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* Sob kichur upore thakbe hover detect korar jonno */
+  cursor: pointer;
+}
+
+.highlightedTile {
+  background-color: #004d26 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Hover effect on tile */
+.highlightedTile:hover {
+  background-color: #006b35 !important;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+.viewAllWrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.viewAllBtn {
+  background-color: #f3f4f6; /* Light gray to match your image */
+  border: 2px solid #138b2148; /* Orange/Gold border */
+  color: #1f2937;
+  padding: 10px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 9999px; /* Fully rounded */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.viewAllBtn:hover {
+  background-color: #004d26; /* Hover e background ke orange/Gold korbo */
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(85, 187, 54, 0.4);
+}
+
+/* Tablet/Mobile Adjustments */
+@media (max-width: 768px) {
+  .viewAllBtn {
+    width: 80%; /* মোবাইলে বাটনটি একটু চওড়া হবে */
+    padding: 12px 20px;
+  }
+}
+
+/* Mobile responsive fixes (shala md/sm mix) */
+@media (max-width: 1024px) {
+  .eventCard {
+    flex-direction: row; /* Tablet e ekhon o pasapasi rakhun */
+  }
+  .bannerSide { width: 40%; }
+  .calendarSide { width: 60%; }
+}
+
+@media (max-width: 768px) {
+  .eventCard {
+    flex-direction: column; /* Mobile e stack */
+  }
+  .bannerSide, .calendarSide { width: 100%; }
+  .bannerImg { height: 200px; }
+}

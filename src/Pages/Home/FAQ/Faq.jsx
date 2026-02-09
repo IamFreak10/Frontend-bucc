@@ -75,7 +75,7 @@ export default function Faq() {
 
   const visibleFAQs = showAll ? faqs : faqs.slice(0, 3);
   return (
-    <Fade delay={400} duration={1500} triggerOnce={false} cascade damping={0.1}>
+    <Fade className='mb-5' delay={400} duration={1500} triggerOnce={false} cascade damping={0.1}>
       <Accordion type="multiple" className="max-w-7xl mx-auto space-y-4">
         {visibleFAQs.map((faq, index) => (
           <AccordionItem

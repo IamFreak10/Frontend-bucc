@@ -6,7 +6,7 @@ export default function Welcome() {
     <Fade delay={200} duration={1500} triggerOnce={false} cascade damping={0.1}>
       <section className="relative py-24 px-6">
         {/* soft background glow */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-green-50 via-white to-white" />
+        <div className="absolute inset-0 -z-10 " />
 
         <div className="max-w-7xl mx-auto ">
           {/* small badge */}
