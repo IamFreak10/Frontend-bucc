@@ -4,6 +4,7 @@ import Welcome from './Welcome/Welcome';
 import Faq from './FAQ/Faq';
 import ExtraordinaryEvents from './ExtraordinaryEvents/ExtraordinaryEvents';
 import MessageRevealSection from './MessageRevealSection/MessageRevealSection';
+import ContactMap from './Map/ContactMap';
 
 export default function Home() {
   return (
@@ -31,6 +32,8 @@ export default function Home() {
         </div>
         <MessageRevealSection />
       </div>
+
+      <ContactMap />
     </>
   );
 }
