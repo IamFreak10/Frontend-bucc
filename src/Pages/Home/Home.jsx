@@ -5,6 +5,7 @@ import Faq from './FAQ/Faq';
 import ExtraordinaryEvents from './ExtraordinaryEvents/ExtraordinaryEvents';
 import MessageRevealSection from './MessageRevealSection/MessageRevealSection';
 import ContactMap from './Map/ContactMap';
+import Advisors from './Advisors/Advisors';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Welcome />
         <Faq />
       </div>
+      
       <div className="relative isolate overflow-hidden">
         {/* Actual Background Layer */}
         <div
@@ -32,8 +34,10 @@ export default function Home() {
         </div>
         <MessageRevealSection />
       </div>
+      <Advisors />
 
       <ContactMap />
+      
     </>
   );
 }
