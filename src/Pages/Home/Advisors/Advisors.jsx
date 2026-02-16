@@ -1,7 +1,8 @@
-import { Lightbulb, Users } from "lucide-react";
-import Advisor from "./Advisor"; // Advisor card component ta import koro
+import React from 'react';
+import { Lightbulb, Users } from 'lucide-react';
+import Advisor from './Advisor'; // Tumar Advisor card file ta eikhane thakbe
 
-export default function Advisors() {
+export default function AdvisorsSection() {
   const data = {
     organization: "BUCC",
     members: [
@@ -81,43 +82,55 @@ export default function Advisors() {
   };
 
   return (
-    <section className="bg-slate-50 py-24 px-6 overflow-visible">
-      <div className="max-w-7xl mx-auto">
+    /* Section py-12 korlam jate upore-niche jayga kom khay */
+    <section className="bg-slate-50 py-12 px-4 overflow-visible">
+      
+      {/* Container max-w-5xl korlam jate card gulo ektu kachakachi thake */}
+      <div className="max-w-5xl mx-auto">
         
-        {/* Header Section */}
-        <div className="relative mb-24 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Compact Header Area */}
+        <div className="relative mb-10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div className="z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-50 text-[#004d26] text-[10px] font-black tracking-widest uppercase mb-4 shadow-sm border border-blue-200">
-              <Lightbulb size={14} className="animate-pulse" /> Expert Guidance
+            {/* Badge - Smaller ratio */}
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-green-50 text-[#004d26] text-[8px] font-black tracking-[0.15em] uppercase mb-2 border border-green-100 shadow-sm">
+              <Lightbulb size={10} className="animate-pulse" /> Expert Guidance
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-none">
+            
+            {/* Title - Reduced from 5xl to 3xl/4xl */}
+            <h2 className="text-2xl md:text-4xl font-black text-slate-900 leading-tight">
               Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004d26] to-green-600">Advisors</span>
             </h2>
-            <p className="text-slate-500 mt-6 max-w-xl font-medium text-lg">
+            
+            <p className="text-slate-500 mt-2 max-w-sm font-medium text-sm leading-relaxed">
               The visionary faculty members and alumni shaping the future of {data.organization}.
             </p>
           </div>
 
-          {/* Stats Box */}
-          <div className="hidden lg:flex items-center gap-4 bg-white p-6 rounded-[2.5rem] shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
+          {/* Compact Stats Box - Proportional Scale Down */}
+          <div className="flex items-center gap-3 bg-white p-3 px-4 rounded-[1.2rem] shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
             <div className="text-right">
-              <p className="text-4xl font-black text-[#004d26] leading-none">{data.members.length}</p>
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Total Advisors</p>
+              <p className="text-2xl font-black text-[#004d26] leading-none">
+                {data.members.length}
+              </p>
+              <p className="text-[8px] font-bold text-slate-400 uppercase tracking-tighter mt-1">
+                Total Advisors
+              </p>
             </div>
-            <div className="w-14 h-14 bg-gradient-to-br from-[#004d26] to-green-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
-              <Users size={28} />
+            <div className="w-9 h-9 bg-gradient-to-br from-[#004d26] to-green-600 rounded-lg flex items-center justify-center text-white shadow-md">
+              <Users size={18} />
             </div>
           </div>
         </div>
 
-        {/* Grid Container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-12">
+        {/* Tight Grid Container - gap-y kora hoyeche 10/12 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6">
           {data.members.map((member, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="flex justify-center"
-              style={{ 
-                animation: `fadeInUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.15}s both` 
+              style={{
+                /* Animation delay ektu komiyechi fast feel er jonno */
+                animation: `fadeInUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.08}s both`,
               }}
             >
               <Advisor member={member} />
@@ -126,19 +139,23 @@ export default function Advisors() {
         </div>
       </div>
 
-      {/* Modern Animation Styles */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      {/* Modern Subdued Animation */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @keyframes fadeInUp {
           from { 
             opacity: 0; 
-            transform: translateY(50px) scale(0.95); 
+            transform: translateY(20px) scale(0.98); 
           }
           to { 
             opacity: 1; 
             transform: translateY(0) scale(1); 
           }
         }
-      `}} />
+      `,
+        }}
+      />
     </section>
   );
 }

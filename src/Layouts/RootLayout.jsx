@@ -1,5 +1,6 @@
 
 import Navbar from '@/components/Navbar/Navbar'
+import Footer from '@/Shared/Footer/Footer';
 import NoticeHeadlineBar from '@/Shared/NoticeHeadlineBar/NoticeHeadlineBar'
 import React from 'react'
 import { Outlet } from 'react-router'
@@ -64,6 +65,7 @@ export default function RootLayout() {
     <NoticeHeadlineBar notices = {notices} />
     
     <Outlet />
+    <Footer />
     
     </>
   )
